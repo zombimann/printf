@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+/**
+ * _printf - produces output according to a format
+ * @format: pointer to acharacter string, composed of zero or
+ * more directives.
+ *
+ * Description: The conversion specifiers to be handles are c, s and %.
+ * Return: The number of characters printed, exclusind the null byte
+ */

@@ -15,7 +15,7 @@
    - newline
 
 2. Print function (integer 'intval')
-   - `_putchar('0' + `intval')
+   - `_putchar('0' + 'intval')
    - `_putchar('\n')`
 
 3. Print function (string 'strval')
