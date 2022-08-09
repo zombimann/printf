@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <unistd.h>
+#include <stdarg.h>
 
 /**
  * _printf - produces output according to a format
@@ -14,28 +16,32 @@ int _printf(const char *format, ...)
 	va_list ap;
 	const char *fp;
 	char *sp;
-	int ip;
+	int ip, charcount;
 
+	charcount = 0;
 	va_start(ap, format);
-	for (fp = format; *p; p++)
+	for (fp = format; *fp; fp++)
 	{
 		if (*fp != '%')
 		{
 			write(1, fp, 1);
 			continue;
 		}
-		switch (*++p)
+		switch (*++fp)
 		{
 		case 'c':
 			ip = va_arg(ap, int);
-			write(1, ip, 1);
+			write(1, &ip, 1);
 			break;
 		case 's':
 			for (sp = va_arg(ap, char *); *sp; sp++)
 				write(1, sp, 1);
 			break;
 		default:
-			write(1, fp);
+			write(1, fp, 1);
 			break;
 		}
+		charcount++;
+	}
+	return charcount;
 }

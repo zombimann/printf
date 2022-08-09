@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	const char *fp;
 	char *sp;
-	int *ip, charcount;
+	int ip, charcount;
 
 	charcount = 0;
 	va_start(ap, format);
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		switch (*++fp)
 		{
 		case 'c':
-			*ip = va_arg(ap, int);
+			ip = va_arg(ap, int);
 			write(1, &ip, 1);
 			break;
 		case 's':
