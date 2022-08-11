@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 	const char *fp;
 	char *sp;
 	int cp, ip, charcount;
+	double dp;
 
 	charcount = 0;
 	va_start(ap, format);
@@ -41,6 +42,10 @@ int _printf(const char *format, ...)
 		case 'i':
 			ip = va_arg(ap, int);
 			print_int(ip);
+			break;
+		case 'd':
+			dp = va_arg(ap, double);
+			print_int(dp);
 			break;
 		default:
 			_putchar(*fp);
