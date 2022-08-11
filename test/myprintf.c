@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 		case 's':
 			for (sp = va_arg(ap, char *); *sp; sp++)
 				_putchar(*sp);
-			break;
+			break;/*
 		case 'i':
 			ip = va_arg(ap, int);
 			print_int(ip);
@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 		case 'd':
 			dp = va_arg(ap, double);
 			print_int(dp);
-			break;
+			break;*/
 		default:
 			_putchar(*fp);
 			break;
